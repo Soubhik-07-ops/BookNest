@@ -1,9 +1,9 @@
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
 import Link from "next/link";
 
-type BookCondition = "Like New" | "Good" | "Fair";
+export type BookCondition = "Like New" | "Good" | "Fair";
 
-interface BookCardProps {
+export interface BookCardProps {
     id: string;
     title: string;
     author: string;

@@ -2,6 +2,7 @@ import BookCard from "@/components/BookCard";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
+import { BookCardProps } from "@/components/BookCard"; // import the type
 
 export default function Home() {
   const categories = [
@@ -13,7 +14,7 @@ export default function Home() {
     { name: "Rare Collectibles", icon: "🔮" },
   ];
 
-  const trendingBooks = [
+  const trendingBooks: BookCardProps[] = [
     {
       id: "1",
       title: "Atomic Habits",

@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import BookCard from "@/components/BookCard";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
@@ -5,6 +7,18 @@ import { FiArrowRight } from "react-icons/fi";
 import { BookCardProps } from "@/components/BookCard"; // import the type
 
 export default function Home() {
+  // Loading State
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Show loading screen for 3 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const categories = [
     { name: "Academic", icon: "📚" },
     { name: "Competitive Exams", icon: "📝" },
@@ -54,6 +68,18 @@ export default function Home() {
     },
   ];
 
+  // Loading Screen
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-500 text-white text-center px-4">
+        <h1 className="text-4xl md:text-5xl font-bold animate-pulse">
+          Pustak hamse, gyan pustak se.....
+        </h1>
+      </div>
+    );
+  }
+
+  // Actual Home Page
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navbar />

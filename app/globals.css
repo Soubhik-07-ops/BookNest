@@ -116,7 +116,77 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+@keyframes floatDelay {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-floatDelay {
+  animation: floatDelay 6s ease-in-out infinite 1s;
+}
+
+@keyframes floatReverseDelay {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.animate-floatReverseDelay {
+  animation: floatReverseDelay 5s ease-in-out infinite 1.5s;
+}
+
+@keyframes bounceDelay {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-bounceDelay {
+  animation: bounceDelay 3s ease-in-out infinite 0.5s;
+}
+
+.animate-spinSlow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  }
+
+  50% {
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de;
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
 }
